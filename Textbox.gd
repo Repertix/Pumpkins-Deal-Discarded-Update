@@ -1,9 +1,6 @@
 extends Panel
 
 
-#Dear Dataminer,
-#This script doesn't work anymore, lol.
-#This is totally fucked up
 
 var actuallyInteracting = false
 var actualSelection = 0
