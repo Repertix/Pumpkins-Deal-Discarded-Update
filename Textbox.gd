@@ -7,7 +7,7 @@ var actualSelection = 0
 var currentText = 0
 var efaces = []
 export var pausedTextbox = false#In case of cinematics
-var entireText = ["Hello, Mr. Adam", "Thanks for testing!", "We still cleaning some things", "If you read this, don't resist to tell him about it."]
+var entireText = ["You know I'm just flight away", "if you wanna you cant take your private plane]
 
 func _ready():
 	$RichTextLabel.set_visible_characters(0)
