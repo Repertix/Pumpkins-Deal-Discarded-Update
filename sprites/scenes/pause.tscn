@@ -1,0 +1,166 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/ModernDOS9x16.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/pause.gd" type="Script" id=2]
+[ext_resource path="res://fonts/ModernDOS8x8.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "pauseStart"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texts/Paused:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 0.41, 0.41 ),
+"update": 0,
+"values": [ Vector2( -320, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texts/Resume:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.8 ),
+"transitions": PoolRealArray( 0.41, 0.41 ),
+"update": 0,
+"values": [ Vector2( -312, 112 ), Vector2( 8, 112 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Texts/Restart:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.9 ),
+"transitions": PoolRealArray( 0.41, 0.41 ),
+"update": 0,
+"values": [ Vector2( -312, 148 ), Vector2( 8, 148 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Texts/Exit:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 1 ),
+"transitions": PoolRealArray( 0.41, 0.41 ),
+"update": 0,
+"values": [ Vector2( -312, 184 ), Vector2( 8, 184 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_checkOption"
+} ]
+}
+
+[node name="pauseMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 0.345098 )
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texts" type="Control" parent="."]
+rect_scale = Vector2( 1.7, 1.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paused" type="RichTextLabel" parent="Texts"]
+margin_left = -320.0
+margin_right = -184.0
+margin_bottom = 88.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "
+ Paused"
+text = "
+ Paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="RichTextLabel" parent="Texts"]
+margin_left = -312.0
+margin_top = 112.0
+margin_right = -240.0
+margin_bottom = 121.0
+rect_scale = Vector2( 3, 3 )
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = " Resume"
+text = " Resume"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="RichTextLabel" parent="Texts"]
+margin_left = -132.845
+margin_top = 148.0
+margin_right = -60.8446
+margin_bottom = 157.0
+rect_scale = Vector2( 3, 3 )
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = " Restart"
+text = " Restart"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="RichTextLabel" parent="Texts"]
+margin_left = -211.718
+margin_top = 184.0
+margin_right = -107.718
+margin_bottom = 193.0
+rect_scale = Vector2( 3, 3 )
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = " Exit to Menu"
+text = " Exit to Menu"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/pauseStart = SubResource( 3 )

@@ -1,0 +1,568 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/scenes/city.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.793, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 11.738 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 14.793, 11.875 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 15.22, 11.417 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 15.873, 11.417 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 1
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 32, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 2
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 3
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 96, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 4
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 5
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 160, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 6
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( 192, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 7
+
+[node name="Sprite8" type="Sprite" parent="."]
+position = Vector2( 224, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 8
+
+[node name="Sprite9" type="Sprite" parent="."]
+position = Vector2( 256, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 9
+
+[node name="Sprite10" type="Sprite" parent="."]
+position = Vector2( 288, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 10
+
+[node name="Sprite11" type="Sprite" parent="."]
+position = Vector2( 320, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 11
+
+[node name="Sprite12" type="Sprite" parent="."]
+position = Vector2( 352, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 12
+
+[node name="Sprite35" type="Sprite" parent="."]
+position = Vector2( 384, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 13
+
+[node name="Sprite36" type="Sprite" parent="."]
+position = Vector2( 416, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 14
+
+[node name="Sprite37" type="Sprite" parent="."]
+position = Vector2( 448, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 15
+
+[node name="Sprite38" type="Sprite" parent="."]
+position = Vector2( 480, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 16
+
+[node name="Sprite39" type="Sprite" parent="."]
+position = Vector2( 512, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 17
+
+[node name="Sprite40" type="Sprite" parent="."]
+position = Vector2( 544, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 18
+
+[node name="Sprite41" type="Sprite" parent="."]
+position = Vector2( 576, 0 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 19
+
+[node name="Sprite13" type="Sprite" parent="."]
+position = Vector2( 0, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 31
+
+[node name="Sprite14" type="Sprite" parent="."]
+position = Vector2( 64, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 33
+
+[node name="Sprite15" type="Sprite" parent="."]
+position = Vector2( 96, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 34
+
+[node name="Sprite16" type="Sprite" parent="."]
+position = Vector2( 128, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 35
+
+[node name="Sprite17" type="Sprite" parent="."]
+position = Vector2( 160, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 36
+
+[node name="Sprite18" type="Sprite" parent="."]
+position = Vector2( 192, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 38
+
+[node name="Sprite19" type="Sprite" parent="."]
+position = Vector2( 224, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 39
+
+[node name="Sprite51" type="Sprite" parent="."]
+position = Vector2( 256, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 38
+
+[node name="Sprite20" type="Sprite" parent="."]
+position = Vector2( 288, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 40
+
+[node name="Sprite21" type="Sprite" parent="."]
+position = Vector2( 320, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 41
+
+[node name="Sprite22" type="Sprite" parent="."]
+position = Vector2( 352, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 42
+
+[node name="Sprite42" type="Sprite" parent="."]
+position = Vector2( 384, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 43
+
+[node name="Sprite43" type="Sprite" parent="."]
+position = Vector2( 448, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 45
+
+[node name="Sprite44" type="Sprite" parent="."]
+position = Vector2( 480, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 46
+
+[node name="Sprite45" type="Sprite" parent="."]
+position = Vector2( 512, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 47
+
+[node name="Sprite46" type="Sprite" parent="."]
+position = Vector2( 544, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 48
+
+[node name="Sprite47" type="Sprite" parent="."]
+position = Vector2( 576, 32 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 49
+
+[node name="Sprite23" type="Sprite" parent="."]
+position = Vector2( 0, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 61
+
+[node name="Sprite24" type="Sprite" parent="."]
+position = Vector2( 32, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 62
+
+[node name="Sprite25" type="Sprite" parent="."]
+position = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 63
+
+[node name="Sprite26" type="Sprite" parent="."]
+position = Vector2( 96, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 64
+
+[node name="Sprite27" type="Sprite" parent="."]
+position = Vector2( 128, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 65
+
+[node name="Sprite28" type="Sprite" parent="."]
+position = Vector2( 160, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 66
+
+[node name="Sprite29" type="Sprite" parent="."]
+position = Vector2( 192, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 68
+
+[node name="Sprite52" type="Sprite" parent="."]
+position = Vector2( 224, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 69
+
+[node name="Sprite53" type="Sprite" parent="."]
+position = Vector2( 256, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 67
+
+[node name="Sprite30" type="Sprite" parent="."]
+position = Vector2( 288, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 70
+
+[node name="Sprite31" type="Sprite" parent="."]
+position = Vector2( 320, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 71
+
+[node name="Sprite48" type="Sprite" parent="."]
+position = Vector2( 384, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 73
+
+[node name="Sprite49" type="Sprite" parent="."]
+position = Vector2( 416, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 74
+
+[node name="Sprite50" type="Sprite" parent="."]
+position = Vector2( 448, 64 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 75
+
+[node name="Sprite32" type="Sprite" parent="."]
+position = Vector2( 0, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 91
+
+[node name="Sprite59" type="Sprite" parent="."]
+position = Vector2( 33.207, 128 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 123
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite59"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite59/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite63" type="Sprite" parent="."]
+position = Vector2( 64, 128 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 124
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite63"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite63/StaticBody2D"]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+
+[node name="Sprite64" type="Sprite" parent="."]
+position = Vector2( 96, 128 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 125
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite64"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite64/StaticBody2D"]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+
+[node name="Sprite65" type="Sprite" parent="."]
+position = Vector2( 128, 128 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 126
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite65"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite65/StaticBody2D"]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+
+[node name="Sprite60" type="Sprite" parent="."]
+position = Vector2( 33.207, 160 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 153
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite60"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite60/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite66" type="Sprite" parent="."]
+position = Vector2( 33.207, 192 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 183
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite66"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite66/StaticBody2D"]
+position = Vector2( 0, -4.113 )
+shape = SubResource( 3 )
+
+[node name="Sprite67" type="Sprite" parent="."]
+position = Vector2( 158.925, 192 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 187
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite67"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite67/StaticBody2D"]
+position = Vector2( 0, -4.113 )
+shape = SubResource( 3 )
+
+[node name="Sprite61" type="Sprite" parent="."]
+position = Vector2( 158.925, 128 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 127
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite61"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite61/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite62" type="Sprite" parent="."]
+position = Vector2( 158.925, 160 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 153
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite62"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite62/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite54" type="Sprite" parent="."]
+position = Vector2( 32, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 93
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite54"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite54/StaticBody2D"]
+position = Vector2( 1.207, 8 )
+shape = SubResource( 4 )
+
+[node name="Sprite56" type="Sprite" parent="."]
+position = Vector2( 64, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 94
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite56"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite56/StaticBody2D"]
+position = Vector2( 0, 8 )
+shape = SubResource( 5 )
+
+[node name="Sprite57" type="Sprite" parent="."]
+position = Vector2( 96, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 95
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite57"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite57/StaticBody2D"]
+position = Vector2( 0, 8 )
+shape = SubResource( 5 )
+
+[node name="Sprite58" type="Sprite" parent="."]
+position = Vector2( 128, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 96
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite58"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite58/StaticBody2D"]
+position = Vector2( 0, 8 )
+shape = SubResource( 5 )
+
+[node name="Sprite55" type="Sprite" parent="."]
+position = Vector2( 160, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 97
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite55"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite55/StaticBody2D"]
+position = Vector2( -1.075, 8 )
+shape = SubResource( 4 )
+
+[node name="Sprite33" type="Sprite" parent="."]
+position = Vector2( 288, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 100
+
+[node name="Sprite34" type="Sprite" parent="."]
+position = Vector2( 320, 96 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 30
+frame = 101

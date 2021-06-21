@@ -1,0 +1,253 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://sprites/gameplay/candy/candy-item/candy-item.png" type="Texture" id=2]
+[ext_resource path="res://fonts/ModernDOS9x16.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/dialogs/dialog-faces.png" type="Texture" id=4]
+[ext_resource path="res://sprites/gameplay/Items/timeAndHearts.png" type="Texture" id=5]
+[ext_resource path="res://fps.gd" type="Script" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0196078, 0.0431373, 0.129412, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0196078, 0.0431373, 0.129412, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0196078, 0.0431373, 0.129412, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "damaged"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 98, 24 ), Vector2( 78, 24 ), Vector2( 98, 24 ), Vector2( 78, 24 ), Vector2( 98, 24 ), Vector2( 88, 24 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ProgressBar:custom_styles/fg:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 0.000150286 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.639216, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.317647, 0.0627451, 0.0627451, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 3 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "HUD is not responsive. El HUD no se adapta a la resolución."
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 192.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Candy" type="Panel" parent="Control"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 248.0
+margin_bottom = 128.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/Candy"]
+position = Vector2( 35.2378, 33.1906 )
+scale = Vector2( 2.25, 2.25 )
+texture = ExtResource( 2 )
+hframes = 20
+vframes = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Candy"]
+margin_left = 71.2378
+margin_top = 16.0
+margin_right = 127.238
+margin_bottom = 36.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Panel" parent="Control"]
+margin_left = 776.0
+margin_top = 64.0
+margin_right = 1000.0
+margin_bottom = 128.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/Time"]
+position = Vector2( 31.7773, 34.8954 )
+scale = Vector2( 2.25, 2.25 )
+texture = ExtResource( 5 )
+hframes = 4
+vframes = 4
+frame = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Time"]
+margin_left = 71.0
+margin_top = 16.0
+margin_right = 143.0
+margin_bottom = 36.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Panel" parent="Control"]
+margin_left = 40.0
+margin_top = 472.0
+margin_right = 489.0
+margin_bottom = 576.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/Health"]
+position = Vector2( 98, 24 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+hframes = 10
+vframes = 10
+frame = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/Health"]
+margin_left = 168.0
+margin_top = 56.0
+margin_right = 432.0
+margin_bottom = 80.0
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+max_value = 4.0
+value = 4.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Health"]
+margin_left = 168.0
+margin_top = 24.0
+margin_right = 300.0
+margin_bottom = 48.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "Health"
+text = "Health"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPHead" type="AnimationPlayer" parent="Control/Health"]
+anims/damaged = SubResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Health"]
+anims/lowHP = SubResource( 8 )
+
+[node name="MaxCandies" type="Panel" parent="Control"]
+margin_left = 112.0
+margin_top = 133.191
+margin_right = 200.0
+margin_bottom = 152.191
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MaxCandies"]
+margin_left = 4.0
+margin_top = 2.80939
+margin_right = 104.0
+margin_bottom = 31.8094
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+bbcode_text = "10"
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gl" type="RichTextLabel" parent="Control/MaxCandies"]
+margin_left = -40.0
+margin_top = 2.80939
+margin_bottom = 42.8094
+custom_fonts/normal_font = SubResource( 11 )
+bbcode_text = "Goal"
+text = "Goal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+margin_right = 135.0
+margin_bottom = 96.0
+bbcode_enabled = true
+bbcode_text = "FPS:333"
+text = "FPS:333"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
