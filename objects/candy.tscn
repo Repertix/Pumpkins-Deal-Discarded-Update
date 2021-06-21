@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/gameplay/candy/candy-item/candy-item.png" type="Texture" id=1]
+[ext_resource path="res://objects/candy.gd" type="Script" id=2]
+[ext_resource path="res://sound/sfx/pickupCandy.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.00081, 6.44631 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "candy"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1.7411 ),
+"update": 0,
+"values": [ Vector2( 0, -1.25 ), Vector2( 0, 1.25 ), Vector2( 0, -1.25 ) ]
+}
+
+[node name="Candy" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1.25 )
+texture = ExtResource( 1 )
+vframes = 20
+hframes = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/candy = SubResource( 2 )
+
+[node name="gottem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_body"]
+[connection signal="finished" from="gottem" to="." method="_on_audio"]

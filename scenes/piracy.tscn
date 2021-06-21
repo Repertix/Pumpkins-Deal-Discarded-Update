@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/piracy_screen.gd" type="Script" id=1]
+[ext_resource path="res://sprites/dialogs/results-face.png" type="Texture" id=2]
+[ext_resource path="res://objects/Transition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/ModernDOS9x16.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment(){
+	vec4 color = texture(TEXTURE, UV);
+	COLOR = vec4(1.0 - color.rgb, color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="Its" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "When I did this, there was the trend of fanmade piracy screen on games, so I decided to do a joke too, originally was meant to include to names so people will really believe I just stole the whole game from two guys and that thing, but I decided it was too much. ES: Cuando hice esto, era trend lo de las pantallas de pirateria hechas por fans, asi que me uní a la broma. Originalmente tenia planeado poner dos nombres ahi, para hacer pensar a la gente que robe el juego de dos muchachos, pero no lo hice ya que lo vi como \"demasiado\"."
+}
+
+[node name="Just" type="CanvasLayer" parent="."]
+
+[node name="A" type="ParallaxBackground" parent="Just"]
+
+[node name="Prank" type="ParallaxLayer" parent="Just/A"]
+modulate = Color( 1, 0, 0, 1 )
+motion_mirroring = Vector2( 960, 960 )
+
+[node name="Bro" type="Sprite" parent="Just/A/Prank"]
+material = SubResource( 2 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Lol" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Lol"]
+margin_left = 32.0
+margin_top = 232.0
+margin_right = 616.0
+margin_bottom = 276.0
+rect_scale = Vector2( 1.7, 1.7 )
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Piracy is an illegal action[/center]
+"
+text = "Piracy is an illegal action
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Lol"]
+margin_left = 24.0
+margin_top = 288.0
+margin_right = 608.0
+margin_bottom = 344.0
+rect_scale = Vector2( 1.7, 1.7 )
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 1, 0.898039, 0.00784314, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Please report this illegal copy to the developer
+Press Enter to delete this game from your PC[/center]
+"
+text = "Please report this illegal copy to the developer
+Press Enter to delete this game from your PC
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Lol"]
+visible = false
+margin_left = -6768.0
+margin_top = -136.0
+margin_right = -6184.0
+margin_bottom = -80.0
+rect_scale = Vector2( 25, 70 )
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.45098, 0.905882, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]JOKE[/center]
+"
+text = "JOKE
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition" parent="." instance=ExtResource( 3 )]

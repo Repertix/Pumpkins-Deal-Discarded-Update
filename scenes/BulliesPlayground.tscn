@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/enemies/bully.png" type="Texture" id=1]
+[ext_resource path="res://scripts/BullyTest.gd" type="Script" id=2]
+[ext_resource path="res://sprites/gameplay/test_stuff/Screenshot_1.png" type="Texture" id=3]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -8, 424, -224, 456, -88, 376, -8, 352, -504, -352, -384, -512, -408, -416, 80, 168, 184, 24, 152, 168, 24, 280, 360, 408, 400, 328, 544, 152, 504, 304, 464, 416, 400, 536, 544, -96, 448, -32, 496, -128, 256, -192, 320, -16, 304, 56, 280, -16, 240, -144, 96, -48, -88, 16, -8, -104, 72, -120, -328, -368, -240, -432, -256, -360, 168, 472, 216, 384, 288, 304, 520, -264, 496, -224, -304, -472, 168, 280, 256, 192, 176, -152, 128, -168, -240, -176, -224, -296, -224, -224, 408, -392, 408, -304, 352, -376, 336, -264, 240, -280, 48, -232, 64, -272, -80, -152, -168, -248, -40, -384, 544, 376, -128, 160, -160, 264, -296, 192, -200, 64, -336, 80, -344, -16, -296, -104 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 12, 13, 14, 15, 16 ), PoolIntArray( 17, 18, 19 ), PoolIntArray( 20, 21, 22, 23, 24 ), PoolIntArray( 25, 26, 27, 28 ), PoolIntArray( 29, 30, 31 ), PoolIntArray( 11, 32, 33, 34, 12 ), PoolIntArray( 35, 17, 19, 36 ), PoolIntArray( 6, 37, 29 ), PoolIntArray( 38, 0, 3, 10, 9, 39 ), PoolIntArray( 40, 25, 28, 41 ), PoolIntArray( 42, 4, 6, 29 ), PoolIntArray( 42, 29, 31, 43, 44 ), PoolIntArray( 45, 35, 36, 46, 47 ), PoolIntArray( 47, 46, 48, 49 ), PoolIntArray( 41, 50, 51, 49, 48, 20, 40 ), PoolIntArray( 52, 53, 54, 51, 50 ), PoolIntArray( 14, 55, 15 ), PoolIntArray( 34, 33, 38, 39 ), PoolIntArray( 56, 7, 10, 57, 58 ), PoolIntArray( 59, 56, 58, 60, 61 ), PoolIntArray( 52, 59, 61, 62, 42 ), PoolIntArray( 52, 42, 44, 53 ), PoolIntArray( 40, 20, 24 ) ]
+outlines = [ PoolVector2Array( -168, -248, -40, -384, 64, -272, 240, -280, 352, -376, 408, -392, 520, -264, 544, -96, 448, -32, 496, -128, 496, -224, 408, -304, 336, -264, 256, -192, 320, -16, 304, 56, 280, -16, 240, -144, 176, -152, 96, -48, -88, 16, -8, -104, 72, -120, 128, -168, 48, -232, -80, -152, -200, 64, -128, 160, 80, 168, 184, 24, 152, 168, 256, 192, 288, 304, 400, 328, 544, 152, 504, 304, 544, 376, 464, 416, 400, 536, 360, 408, 168, 472, 216, 384, 168, 280, -8, 424, -224, 456, -88, 376, -8, 352, 24, 280, -160, 264, -296, 192, -336, 80, -344, -16, -296, -104, -240, -176, -504, -352, -384, -512, -408, -416, -304, -472, -328, -368, -240, -432, -256, -360, -224, -296, -224, -224 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.0407, 10 )
+
+[node name="BulliesPlayground" type="Node2D"]
+__meta__ = {
+"_editor_description_": "Made to test an attempt to implement Pathfinding for enemies. Hecho para probar ua manera de implementar pathfinding para enemigos."
+}
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Navigation2D"]
+position = Vector2( 68, -40 )
+scale = Vector2( 4.96644, 4.97479 )
+texture = ExtResource( 3 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "Very cool Dragon´s Fap hand, lmao."
+}
+
+[node name="BullTheY" type="KinematicBody2D" parent="Navigation2D"]
+position = Vector2( -56, -352 )
+scale = Vector2( 3, 3 )
+
+[node name="Sprite" type="Sprite" parent="Navigation2D/BullTheY"]
+texture = ExtResource( 1 )
+hframes = 15
+vframes = 15
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Navigation2D/BullTheY"]
+position = Vector2( 0, 17.9325 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )

@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/ui/allChars.png" type="Texture" id=1]
+[ext_resource path="res://fonts/ModernDOS9x16.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/characterSelector.gd" type="Script" id=3]
+[ext_resource path="res://objects/Transition.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/dialogs/results-face.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ui/mapSelector.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 1920 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 56.0
+margin_top = 112.0
+margin_right = 184.0
+margin_bottom = 129.0
+rect_scale = Vector2( 2.5, 2.5 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Character Name[/center]"
+text = "Character Name"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = -24.0
+margin_top = 24.0
+margin_right = 104.0
+margin_bottom = 41.0
+rect_scale = Vector2( 1.7, 1.7 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][ESC] Back[/center]"
+text = "[ESC] Back"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_top = 496.0
+margin_right = 410.0
+margin_bottom = 513.0
+rect_scale = Vector2( 2.5, 2.5 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Character Name[/center]"
+text = "Character Name"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapName" type="RichTextLabel" parent="."]
+margin_left = 448.0
+margin_top = 72.0
+margin_right = 659.0
+margin_bottom = 89.0
+rect_scale = Vector2( 2.5, 2.5 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Character Name[/center]"
+text = "Character Name"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition" parent="." instance=ExtResource( 4 )]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 1280, 264 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+visible = false
+position = Vector2( 0, -8 )
+current = true
+zoom = Vector2( 0.7, 0.7 )
+smoothing_enabled = true
+
+[node name="Charprite" type="Sprite" parent="."]
+position = Vector2( 208, 288 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 1 )
+hframes = 15
+vframes = 15
+
+[node name="Maprite" type="Sprite" parent="."]
+position = Vector2( 712, 296 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+hframes = 10
+vframes = 10

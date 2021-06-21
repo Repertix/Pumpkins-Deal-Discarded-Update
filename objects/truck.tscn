@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sprites/gameplay/the_truck/dumpTruck.png" type="Texture" id=1]
+[ext_resource path="res://scripts/truck.gd" type="Script" id=2]
+[ext_resource path="res://scripts/carRumRum.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "goingFuck"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 88, 24 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 88, 24 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 88, 24 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 40, 40 )
+
+[node name="TruckStuff" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Truck" type="KinematicBody2D" parent="."]
+position = Vector2( -1640, 0 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="Sprite" type="Sprite" parent="Truck"]
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Truck"]
+anims/goingFuck = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Truck"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck/Area2D"]
+position = Vector2( 0, 32 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Truck"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck/StaticBody2D"]
+position = Vector2( 0, 32 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck"]
+position = Vector2( 0, 32 )
+shape = SubResource( 4 )
+
+[node name="Entrance" type="Area2D" parent="."]
+position = Vector2( -1640, 0 )
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance"]
+position = Vector2( 0, 32 )
+shape = SubResource( 5 )
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2( 1640, 0 )
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2( 0, 32 )
+shape = SubResource( 6 )
+[connection signal="area_entered" from="Truck/Area2D" to="." method="_newBody"]
