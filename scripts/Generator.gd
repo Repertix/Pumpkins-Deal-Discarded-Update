@@ -40,7 +40,7 @@ func _generateHearts(amount):
 
 
 
-#YandereDev no se preocuparía por esto. Pero joder, el nunca ha tenido una tostadora o que pedo? xDDDDDDDD
+#In case you use this, take not that this could not be the best way, affects perfomance
 func _generateCandy(amount):
 	for i in amount:
 		var candy = load("res://objects/candy.tscn")
@@ -56,7 +56,7 @@ func _generateClock(amount):
 		var dk = $CollisionShape2D.shape.extents
 		cl.position = Vector2(randi()%(int(dk.x)*2)-int(dk.x), randi()%(int(dk.y)*2)-int(dk.y))
 		call_deferred("add_child", cl)
-
+#Useless as fuck
 #func _generate_candie():
 	#var candy = get_parent().get_node("Coin/Coin")
 	#var dCandy = candy.duplicate()
