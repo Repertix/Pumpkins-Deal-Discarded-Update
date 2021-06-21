@@ -1,0 +1,14 @@
+{
+  "0": {
+    "character": "res://characters/PumpBoiPlayer.tscn",
+    "iconLife": [1,2,3,4]
+  },
+  "1": {
+    "character": "res://characters/TankmanPlayer.tscn",
+    "iconLife": [5,6,7,8]
+  },
+  "2": {
+    "character": "res://characters/TASPlayer.tscn",
+    "iconLife": [11,12,13,14]
+  }
+ } //The past has been removed. See HIM in the FUTURE.
