@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	$Lol/RichTextLabel3.visible = false
-	print("Ha! Got pranked. Lol. If you see this, take care of the code, lmao. AND Send a screenshot to the dev, of course, me. Lol.")
+	print("Ha! Got pranked. Lol. If you see this, take care of the code, lmao. AND Send a screenshot to the dev, of course, me. Lol.")#Update, better not pls. ES: Actualización, mejor no porfa.
 
 func _process(delta):
 	$Just/A/Prank.motion_offset.x -= 0.5
