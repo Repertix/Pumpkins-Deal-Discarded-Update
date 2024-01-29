@@ -2,7 +2,7 @@
 An old game I wanted to develop but due to lacks of juice and the fact that the gameplay was really boring I decided to scrap it. This code is intended to be here as just for pure preservation as the code is a total mess and I TOTALLY NOT recommend to use it as a base code for your game or anything you could do.
 
 ## Do you mind re-doing the game?
-Yes. But not right now as I'm busy with other one and I'll require some thinking time to achieve a good and fun gameplay to even re-make this game, so yeah, maybe later.
+No, absolutely. But not right now as I'm busy with other one and I'll require some thinking time to achieve a good and fun gameplay to even re-make this game, so yeah, maybe later.
 
 ## Which software does this use?
 It uses Godot Engine 3.2, but with any Godot Engine 3 version would be good.
